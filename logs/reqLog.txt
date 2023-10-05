@@ -22,3 +22,5 @@
 20231004	10:53:41	1fd7292e-1ab3-4f98-aaaa-8ea0d1b4c53a	POST	undefined	/auth
 20231004	10:53:55	14dc3e96-81e4-44c5-8f1f-03b06bc3a7e5	POST	undefined	/employees
 20231004	10:54:01	4abb1e26-a2a2-4fa1-98ce-d6e3884f0304	DELETE	undefined	/employees
+20231004	12:13:50	d0f75a11-3f79-4fd5-bb58-c3188d6ad180	POST	undefined	/register
+20231004	12:14:51	dfd0ab1f-926f-4a01-b438-17e77a79454c	POST	undefined	/register
