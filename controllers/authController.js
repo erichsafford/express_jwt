@@ -21,7 +21,7 @@ const handleLogin = async (req, res) => {
                 }
             },
             process.env.ACCESS_TOKEN_SECRET,
-            { expiresIn: '30s' }
+            { expiresIn: '300s' }
         );
         const refreshToken = jwt.sign(
             { "username": foundUser.username },
@@ -33,11 +33,14 @@ const handleLogin = async (req, res) => {
         const result = await foundUser.save()
         console.log(result)
 
-        res.cookie('jwt', refreshToken, { httpOnly: true, sameSite: 'None', secure: true, maxAge: 24 * 60 * 60 * 1000 }); // remove secure prop when testing refresh/cookies
+        res.cookie('jwt', refreshToken, { httpOnly: true, sameSite: 'None', maxAge: 24 * 60 * 60 * 1000 }); // remove secure prop when testing refresh/cookies
         res.json({ accessToken });
     } else {
         res.sendStatus(401);
     }
 }
+
+// Removed for testing.  Needs to be added back to res.cookie params (currently ln 36)
+// secure: true,
 
 module.exports = { handleLogin };
